@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.google.com/noto/specimen/Noto+Serif+Vithkuqi"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/static/css/style.css" />
+
+    <style>
+  .typed-cursor {
+    font-size: 30px; /* Adjust the size of the cursor here */
+    color: black; /* Adjust the color if needed */
+  }
+</style>
+  </head>
+  <body>
+    <div class="inner-body">
+      <div class="navbar">
+        <div class="nav-left">
+          <p>Aqib
+          <p>&nbsp;&nbsp;Shah</p></p>
+        </div>
+        <div class="nav-mid">
+          <a href="#home">Home</a>
+          <a href="#portfolio"
+            ><i class="fa-brands fa-facebook"></i>Portfolio</a
+          >
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+<div class="nav-right">
+  <button onclick="openWhatsApp()">Text me</button>
+</div>
+
+      </div>
+
+      <main class="main">
+        <div class="main-div" id="home">
+          <div class="left">
+            <div class="intro">
+              <h2>Hey, I'm Aqib Shah</h2>
+              <h1 class="typer">Data Analyst</h1>
+              <p>
+                I specialize in leveraging Python for everything from automation and data analysis to building applications that solve complex problems. With experience in both software development and analytical approaches
+              </p>
+            </div>
+            <div class="contact">
+              <a
+                href="/static/images/cv.pdf"
+                target="_blank"
+                class="download-btn"
+                ><input type="submit" name="" id="" value="Download CV"
+              /></a>
+              <a href="#contact"
+                ><input type="submit" name="" id="" value="Conatact me"
+              /></a>
+            </div>
+          </div>
+
+          <div class="right"><img src="/static/images/laptop2.png" alt="" /></div>
+        </div>
+
+        <div class="main-stripe navbar ">
+          <div class="stripe-mid">
+            <a href="" target="_blank"><i class="ri-google-fill"></i>Google</a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61550238164597"
+              target="_blank"
+              ><i class="ri-facebook-fill"></i>Facebook</a
+            >
+            <a
+              href="https://www.linkedin.com/in/aqib-shah-634473234/"
+              target="_blank"
+              ><i class="ri-linkedin-fill"></i>LinkedIn</a
+            >
+            <a href="https://github.com/Aqib-coder" target="_blank"
+              ><i class="ri-github-fill"></i>Github</a
+            >
+          </div>
+          <div class="stripe-mid2">
+            <a href="" target="_blank"><i class="ri-google-fill"></i></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61550238164597"
+              target="_blank"
+              ><i class="ri-facebook-fill"></i></a
+            >
+            <a
+              href="https://www.linkedin.com/in/aqib-shah-634473234/"
+              target="_blank"
+              ><i class="ri-linkedin-fill"></i></a
+            >
+            <a href="https://github.com/Aqib-coder" target="_blank"
+              ><i class="ri-github-fill"></i></a
+            >
+          </div>
+        </div>
+
+        <div class="services container" id="services">
+          <div class="services-heading"><h1>Services</h1></div>
+          <div class="service-carts">
+            {% for service in services %}
+            <div class="service-cart">
+              <h1>{{service.service_title}}</h1>
+              <p>{{service.service_desc | safe}}</p>
+            </div>
+            {% endfor %} {% comment %}
+            <div class="service-cart">
+              <h1>Website Development</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+                porro deserunt temporibus ducimus iusto facilis nemo recusandae
+                placeat cum cumque.
+              </p>
+            </div>
+            <div class="service-cart">
+              <h1>PowerBi Dashboards</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+                porro deserunt temporibus ducimus iusto facilis nemo recusandae
+                placeat cum cumque.
+              </p>
+            </div>
+            <div class="service-cart">
+              <h1>PowerBi Dashboards</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+                porro deserunt temporibus ducimus iusto facilis nemo recusandae
+                placeat cum cumque.
+              </p>
+            </div>
+            {% endcomment %}
+          </div>
+        </div>
+
+        <div class="portfolio container" id="portfolio">
+          <h1 class="portfolio-h1">Portfolio</h1>
+          <div class="service-carts">
+            {% for project in projects %}
+            <a href="/project/{{project.project_slug}}" class="service-cart">
+              <div>
+                <h2>{{project.project_title}}</h2>
+                <p>{{project.project_tech | safe}}</p>
+                <p>{{project.project_desc | safe}}</p>
+              </div>
+            </a>
+
+            {% endfor %}
+            <!-- </div> -->
+          </div>
+        </div>
+
+        <div class="contact-form container" id="contact">
+          <h1>Contact</h1>
+          <div class="main-div">
+            <div class="right contact-right">
+              <img src="/static/images/background.jpg" alt="" />
+            </div>
+
+            <div class="left contact-left">
+              <form method="post">
+                {% csrf_token %}
+                <p>
+                  Contact me throught social media or you can directly submit
+                  the given form correctly. This is also way to contact me, I
+                  will repond you through email.
+                </p>
+                {% if error %}
+                <div
+                  class="p-3 text-primary-emphasis bg-danger-subtle border border-primary-subtle rounded-3"
+                >
+                  Please Enter required fields
+                </div>
+                {% endif %}
+
+                <h5>Name:</h5>
+                <input type="text" placeholder="Enter Name" name="c_name" />
+                <h5>Phone Number:</h5>
+
+                <input
+                  type="phone2numeric"
+                  placeholder="Enter Number"
+                  name="c_phone"
+                />
+                <h5>Email:</h5>
+
+                <input type="email" placeholder="Enter Email" name="c_email" />
+                <h5>Domain:</h5>
+
+                <select name="work" id="">
+                  <option value="" selected>Select Domain for work</option>
+                  {% for service in services %}
+                  <option value="{{service.service_title}}">
+                    {{service.service_title}}
+                  </option>
+                  {% endfor %}
+                </select>
+
+                <button class="submit" type="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed(".typer", {
+        strings: ["Software Developer", "Python Programmer", "Data Analyst"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true,
+      });
+    </script>
+    <script>
+  function openWhatsApp() {
+    // Replace the number below with your WhatsApp number in international format (no + or 00)
+    window.open("https://wa.me/923328046352", "_blank");
+  }
+</script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous" 
+    ></script>
+  </body>
+</html>
